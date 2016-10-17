@@ -1,7 +1,7 @@
 {
   "name": "react-node-starter",
   "version": "0.2.0",
-  "description": "Get started with Webpack, Express, & React quickly.",
+  "description": "react starter",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
