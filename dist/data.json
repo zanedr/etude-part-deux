@@ -1,0 +1,20 @@
+[
+  {
+    "firstname" : "Bill",
+    "lastname" : "Gates",
+    "message" : "Hey bro, you should download Windows 10!",
+    "imageUrl" : "img/billgates.jpg"
+  },
+  {
+    "firstname" : "Marissa",
+    "lastname" : "Mayer",
+    "message" : "I have to reschedule our meeting to 10:30am.",
+    "imageUrl" : "img/marissamayer.jpg"
+  },
+  {
+    "firstname" : "Linus",
+    "lastname" : "Torvalds",
+    "message" : "I am way smarter than all of you. Just kidding, but seriously, I am.",
+    "imageUrl" : "img/linustorvalds.jpg"
+  }
+]
