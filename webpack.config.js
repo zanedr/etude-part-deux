@@ -2,31 +2,33 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
+  // Start building in src folder
   entry: [
     './src/index'
   ],
   module: {
    loaders: [
      {
+       // Run js files through babel module
        test: /\.js?$/, loader: 'babel', exclude: /node_modules/
      },
      {
-       test: /\.css$/,
-       loaders: [
-         'style?sourceMap',
-         'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
-     ]
+        // Enable SCSS functionality
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
      }
    ]
  },
   resolve: {
     extensions: ['', '.js']
   },
+  // Output to dist folder as bundle.js
   output: {
     path: path.join(__dirname, '/dist'),
     publicPath: '/',
     filename: 'bundle.js'
   },
+  // Enable hot reload while webpack dev server is in use
   devServer: {
     contentBase: './dist',
     hot: true

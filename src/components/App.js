@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FirstComponent from './FirstComponent/FirstComponent';
 
 export default class extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ export default class extends Component {
   render() {
     return (
       <div>
-        <h1>Hello React!</h1>
+        <FirstComponent />
       </div>
     );
   }
