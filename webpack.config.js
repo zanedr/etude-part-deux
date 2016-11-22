@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
   // Start building in src folder
@@ -15,7 +16,7 @@ module.exports = {
      {
         // Enable SCSS functionality
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        loaders: ["style", "css", "postcss-loader", "sass"]
      }
    ]
  },
@@ -38,4 +39,5 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ]
+  postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ]
 };
