@@ -20,6 +20,8 @@ module.exports = {
      }
    ]
  },
+ postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
+ 
   resolve: {
     extensions: ['', '.js']
   },
@@ -39,5 +41,4 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ]
-  postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ]
 };
