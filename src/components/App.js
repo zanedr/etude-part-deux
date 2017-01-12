@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+require('./global.scss');
 
 export default class extends Component {
   constructor(props) {
