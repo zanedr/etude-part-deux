@@ -11,7 +11,7 @@ export default class extends Component {
   render() {
     return (
       <div>
-      {this.props.children}
+        <h1>Hello React</h1>
       </div>
     );
   }
