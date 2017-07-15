@@ -1,44 +1,42 @@
-var webpack = require('webpack');
-var path = require('path');
-var autoprefixer = require('autoprefixer');
+var webpack = require('webpack')
+var path = require('path')
+var autoprefixer = require('autoprefixer')
 
 module.exports = {
-  // Start building in src folder
-  entry: [
-    './src/index'
-  ],
+  entry: ['./src/index'],
   module: {
-   loaders: [
-     {
-       // Run js files through babel module
-       test: /\.js?$/, loader: 'babel', exclude: /node_modules/
-     },
-     {
-        // Enable SCSS functionality
+    loaders: [
+      {
+        test: /\.js?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
         test: /\.scss$/,
-        loaders: ["style", "css", "postcss-loader", "sass"]
-     }
-   ]
- },
- postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
- 
-  resolve: {
-    extensions: ['', '.js']
+        loaders: [
+          require.resolve('style-loader'),
+          require.resolve('css-loader'),
+          require.resolve('sass-loader')
+        ]
+      }
+    ]
   },
-  // Output to dist folder as bundle.js
+  resolve: {
+    extensions: ['.js', '.scss']
+  },
   output: {
     path: path.join(__dirname, '/dist'),
     publicPath: '/',
     filename: 'bundle.js'
   },
-  // Enable hot reload while webpack dev server is in use
   devServer: {
     contentBase: './dist',
-    hot: true
+    hot: true,
+    historyApiFallback: true
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin()
   ]
-};
+}
