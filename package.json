@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "webpack --config ./webpack.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node server.js",
     "dev": "webpack-dev-server --hot --inline",
     "postinstall": "webpack -p --config webpack.prod.config.js"
