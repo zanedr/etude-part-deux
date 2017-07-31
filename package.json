@@ -3,6 +3,9 @@
   "version": "0.2.0",
   "description": "react starter",
   "main": "server.js",
+  "engines": {
+    "node": "6.11.1"
+  },
   "scripts": {
     "build": "webpack --config ./webpack.config.js",
     "test": "mocha",
