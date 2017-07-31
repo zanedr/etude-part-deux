@@ -4,6 +4,7 @@
   "description": "react starter",
   "main": "server.js",
   "scripts": {
+    "build": "webpack --config ./webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "dev": "webpack-dev-server --hot --inline",
@@ -12,7 +13,13 @@
   "author": "Daniel Zuzevich",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "chai": "^4.1.0",
+    "chai-http": "^3.0.0",
     "express": "^4.14.0",
+    "knex": "^0.13.0",
+    "mocha": "^3.5.0",
+    "pg": "^7.0.2",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-redux": "^5.0.2",
