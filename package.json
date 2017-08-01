@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "webpack --config ./webpack.config.js",
-    "test": "mocha",
+    "test": "jest",
     "start": "node server.js",
     "dev": "webpack-dev-server --hot --inline",
     "postinstall": "webpack -p --config webpack.prod.config.js"
@@ -28,7 +28,10 @@
     "chai": "^4.1.0",
     "chai-http": "^3.0.0",
     "css-loader": "^0.28.4",
+    "enzyme": "^2.9.1",
     "express": "^4.14.0",
+    "fetch-mock": "^5.12.1",
+    "jest": "^20.0.4",
     "knex": "^0.13.0",
     "mocha": "^3.5.0",
     "node-sass": "^4.5.3",
@@ -49,5 +52,11 @@
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^2.5.0",
     "webpack-hot-middleware": "^2.10.0"
+  },
+  "devDependencies": {
+    "enzyme": "^2.9.1",
+    "jest": "^20.0.4",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1"
   }
 }

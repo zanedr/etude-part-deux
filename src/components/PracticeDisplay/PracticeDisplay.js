@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Settings } from '../Settings/Settings'
+import { Settings } from '../Settings/Settings';
+import MusicPlayer from '../MusicPlayer/MusicPlayer';
 
 export default class PracticeDisplay extends Component{
     constructor(props){
@@ -32,6 +33,7 @@ export default class PracticeDisplay extends Component{
     render() {
         return (
             <div className="practice-container">
+              <MusicPlayer />
                 <h1></h1>
 
                 <textarea className="tab-display"></textarea>
