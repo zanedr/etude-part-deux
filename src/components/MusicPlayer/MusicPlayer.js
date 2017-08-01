@@ -44,6 +44,7 @@ export default class MusicPlayer extends Component {
     this.setState({
       url: '',
       playing: false,
+      playbackRate: 1,
       timestamp: ''
     })
   }
@@ -87,7 +88,7 @@ export default class MusicPlayer extends Component {
   render() {
     const { url, playing, controls, volume, playbackRate, timestamp } = this.state;
     return (
-      <section class="music-player">
+      <section className="music-player">
         <ReactPlayer ref={player => this.player = player}
                      url={url}
                      playing={playing}
@@ -97,23 +98,31 @@ export default class MusicPlayer extends Component {
                      width='0'
                      height='0'
                    />
-        <section class="player-controls">
-          <button onClick={(e) => this.isPlaying(e)}>{playing? 'Pause': 'Play'}</button>
-          <button onClick={(e) => this.setPlayback(e)}>+Speed</button>
-          <button onClick={(e) => this.setPlayback(e)}>-Speed</button>
-          <input type='text'
+        <section className="player-controls">
+          <button className='play-button'
+                  onClick={(e) => this.isPlaying(e)}>{playing? 'Pause': 'Play'}</button>
+          <button className='speed-up'
+                  onClick={(e) => this.setPlayback(e)}>+Speed</button>
+          <button className='speed-down'
+                  onClick={(e) => this.setPlayback(e)}>-Speed</button>
+          <input className='seek-to'
+                 type='text'
                  placeholder='Seek To'
                  value={timestamp}
                  onChange={(e) => { this.setTimestamp(e) }}
                />
-          <button onClick={() => this.submitTimestamp()}>Go</button>
-          <input type='text'
+          <button className='submit-timestamp'
+                  onClick={() => this.submitTimestamp()}>Go</button>
+          <input className='paste-url'
+                 type='text'
                  placeholder='Paste Song Url'
                  value={url}
                  onChange={(e) => this.setUrl(e)}
                />
-          <button onClick={() => this.submitUrl()}>Go</button>
-          <button onClick={() => this.resetState()}>Reset</button>
+          <button className='submit-url'
+                  onClick={() => this.submitUrl()}>Go</button>
+          <button className='reset-url'
+                  onClick={() => this.resetState()}>Reset</button>
         </section>
       </section>
     )
