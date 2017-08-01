@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class Setting extends Component {
+export class Settings extends Component {
     constructor(props) {
         super(props)
         this.state = {

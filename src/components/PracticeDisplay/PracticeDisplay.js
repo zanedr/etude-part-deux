@@ -25,7 +25,7 @@ export default class PracticeDisplay extends Component{
     settings() {
         if(this.state.settings === true) {
             return (
-                <Settings 
+                <Settings
                     id={this.props.id}
                     title={this.props.title}
                     artist={this.props.artist}
@@ -46,6 +46,7 @@ export default class PracticeDisplay extends Component{
                 <h1></h1>
                 <textarea className="tab-display"></textarea>
                 <button className="settings-button" onClick={this.openSettings.bind(this)}>Settings</button>
+                <button onClick={()=> this.props.unselect()} >Return to Song List</button>
             </div>
         )
     }
