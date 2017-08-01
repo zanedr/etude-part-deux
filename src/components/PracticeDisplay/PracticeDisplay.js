@@ -6,7 +6,7 @@ export default class PracticeDisplay extends Component{
     constructor(props){
         super(props)
         this.state = {
-            settings: true,
+          settings: true,
         }
     }
 
