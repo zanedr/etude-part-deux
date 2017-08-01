@@ -15,6 +15,7 @@
 }
 
 .settings-container input {
+  color: $white;
   width: 75%;
   height: 30px;
   border: none;
@@ -28,4 +29,9 @@
   width: 45%;
   border: none;
   color: $black;
+}
+
+.setting-tab {
+  height: 60px;
+  width: 75%;
 }

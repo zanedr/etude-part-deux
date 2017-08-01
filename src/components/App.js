@@ -9,7 +9,7 @@ export default class extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      songs: mockSongs,
+      songs: [],
       selectedSong: {}
     }
   }
@@ -17,7 +17,10 @@ export default class extends Component {
   componentWillMount() {
     fetch('api/v1/songs')
     .then(res => res.text())
-    .then(song => console.log())
+    .then(songs => {
+      let songList = JSON.parse(songs)
+      return this.setState({songs: songList})
+    })
   }
 
   displaySelected() {
@@ -32,6 +35,12 @@ export default class extends Component {
 
   unselectSong(songInfo) {
     this.setState({selectedSong: {}})
+    fetch('api/v1/songs')
+    .then(res => res.text())
+    .then(songs => {
+      let songList = JSON.parse(songs)
+      return this.setState({songs: songList})
+    })
   }
 
   render() {

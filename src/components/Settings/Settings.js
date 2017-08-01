@@ -16,7 +16,6 @@ export class Settings extends Component {
     }
 
     componentWillMount() {
-        console.log('WILL MOUNT', this.props)
         this.setState({
             id: this.props.id,
             title: this.props.title,
@@ -25,11 +24,20 @@ export class Settings extends Component {
             tab: this.props.tab,
             audio: this.props.audio,
             priority: this.props.priority
-        });
+        })
+        console.log('WILL MOUNT', this.state)
     };
 
     saveSettings() {
-        console.log('patch client side')
+        let processDoubleLineBreaksTab = this.state.tab.split('\n\n')
+        let processedTab = []
+        processDoubleLineBreaksTab.forEach((line) => {
+            line.split('\n').forEach((interiorLine) => {
+                processedTab.push(interiorLine)
+            })
+        })
+        console.log('patch client side', processedTab)
+        console.log('patch client side double', processDoubleLineBreaksTab)
         fetch('/api/v1/songs', {
             method: 'PATCH',
             headers: { 'Content-Type' : 'application/json' },
@@ -38,7 +46,7 @@ export class Settings extends Component {
                 'title': this.state.title,
                 'artist': this.state.artist,
                 'timestamps': this.state.timestamps,
-                'tab': this.state.tab,
+                'tab': JSON.stringify(processedTab),
                 'audio': this.state.audio,
                 'priority': this.state.priority
             })
@@ -66,8 +74,8 @@ export class Settings extends Component {
                     <input className="settings-input setting-timestamp" value={this.state.timestamps} type="text" placeholder='Enter Timestamp' onChange={(e) => {this.setState({timestamps: e.target.value})}} />
                 </container>
                 <container className="settings-input">
-                    <p className="settings-input-label">Tab Location:</p>
-                    <input className="settings-input setting-tab" value={this.state.tab} type="text" placeholder='Enter Tab Location' onChange={(e) => {this.setState({tab: e.target.value})}} />
+                    <p className="settings-input-label">Paste Tab Here:</p>
+                    <textarea className="settings-input setting-tab" value={JSON.parse(this.state.tab)} type="text" placeholder='Enter Tab Location' onChange={(e) => {this.setState({tab: e.target.value})}} ></textarea>
                 </container>
                 <container className="settings-input">
                     <p className="settings-input-label">Audio Location:</p>
