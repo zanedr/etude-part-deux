@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
-// require('./App.css');
 require('./global.scss');
-import { SongDisplay } from './SongDisplay/SongDisplay';
-import { mockSongs } from '../../mock-data/songs.js';
-import MusicPlayer from './MusicPlayer/MusicPlayer';
+import { SongDisplay } from './SongDisplay/SongDisplay'
+import { PracticeDisplay } from './PracticeDisplay/PracticeDisplay'
+import { mockSongs } from '../../mock-data/songs.js'
 
 
 export default class extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      songs: mockSongs
+      songs: mockSongs,
+      selectedSong: {
+        title: "Blues Clair",
+        artist: "Django Reinhardt",
+        date_added: "",
+        priority: 3,
+        timestamps: [],
+        tab: "./tabs/bluesclair.txt",
+        audio: "https://www.youtube.com/watch?v=RMZHm4KB7Ps"
+    }
     }
   }
 
@@ -20,12 +28,26 @@ export default class extends Component {
     .then(song => console.log(song))
   }
 
+  // displaySelected() {
+  //   if(this.selectSong.length) {
+  //     return <PracticeDisplay>
+  //   }
+  // }
+
+  selectSong(songInfo) {
+    this.setState({selectedSong: {}})
+  }
+
+  unselectSong(songInfo) {
+    this.setState({selectedSong: songInfo})
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Etude</h1>
-        <SongDisplay songs={this.state.songs}/>
-        <MusicPlayer />
+        <PracticeDisplay {...this.state.selectedSong}/>
+        {/* <SongDisplay unselect={this.unselectSong.bind(this)} select={this.selectSong.bind(this)} songs={this.state.songs}/> */}
       </div>
     );
   }
