@@ -51,10 +51,35 @@ describe('MusicPlayer', () => {
     const wrapper = shallow(<MusicPlayer />);
     const speedUp = wrapper.find('.speed-up');
 
-    expect(wrapper.state().playbackRate).toEqual(1);
+    expect(wrapper.state().playbackRate).toBe(1);
 
     speedUp.simulate('click');
 
-    expect(wrapper.state().playbackRate).toEqual(1.1);
+    expect(wrapper.state().playbackRate).toBe(1.1);
+  });
+
+  it('should slow down the playback of a song', () => {
+    const wrapper = shallow(<MusicPlayer />);
+    const speedUp = wrapper.find('.speed-down');
+
+    expect(wrapper.state().playbackRate).toBe(1);
+
+    speedUp.simulate('click');
+
+    expect(wrapper.state().playbackRate).toBe(0.9);
+  });
+
+  it('should seek to a specific timestamp', () => {
+    const wrapper = mount(<MusicPlayer />);
+    const input = wrapper.find('.seek-to');
+    const submitBtn = wrapper.find('.submit-timestamp');
+
+    expect(wrapper.state().timestamp).toBe('');
+
+    input.simulate('change', {target: {value: '1:30'}});
+    submitBtn.simulate('click');
+
+    expect(wrapper.state().timestamp).toBe('1:30');
+    expect(wrapper.state().playing).toBe(true);
   });
 });
