@@ -1,0 +1,67 @@
+@import '../variables';
+
+.music-player {
+    background: linear-gradient(#454545, #1c1c1c);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 3;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.player-controls {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 30% auto;
+}
+
+.music-player container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.play-reset {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.music-player input {
+  width: 75%;
+  height: 30px;
+  border: none;
+  background: transparent;
+  border-bottom: 3px solid $white;
+}
+
+.seek button,
+.url button {
+  margin: 2% 0;
+  background: $white;
+  width: 20%;
+  height: 20px;
+  border: none;
+  color: $black;
+}
+
+.play-reset button {
+  margin-top: 5%;
+  background: $white;
+  width: 50%;
+  height: 30px;
+  border: none;
+  color: $black;
+}
+
+.speed button {
+  margin: 5% 0;
+  background: $lightGreen;
+  width: 35%;
+  height: 20px;
+  border: none;
+  color: $black;
+}

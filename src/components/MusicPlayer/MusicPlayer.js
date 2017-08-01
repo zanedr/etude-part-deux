@@ -98,30 +98,36 @@ export default class MusicPlayer extends Component {
                      height='0'
                    />
         <section className="player-controls">
-          <button className='play-button'
-                  onClick={(e) => this.isPlaying(e)}>{playing? 'Pause': 'Play'}</button>
-          <button className='speed-up'
-                  onClick={() => this.setPlayback('+')}>+Speed</button>
-          <button className='speed-down'
-                  onClick={() => this.setPlayback('-')}>-Speed</button>
-          <input className='seek-to'
-                 type='text'
-                 placeholder='Seek To'
-                 value={timestamp}
-                 onChange={(e) => { this.setTimestamp(e) }}
-               />
-          <button className='submit-timestamp'
-                  onClick={() => this.submitTimestamp()}>Go</button>
-          <input className='url-input'
-                 type='text'
-                 placeholder='Paste Song Url'
-                 value={url}
-                 onChange={(e) => this.setUrl(e)}
-               />
-          <button className='submit-url'
-                  onClick={() => this.submitUrl()}>Go</button>
-          <button className='reset-url'
-                  onClick={() => this.resetState()}>Reset</button>
+          <container className='seek'>
+            <input className='seek-to'
+              type='text'
+              placeholder='Seek To'
+              value={timestamp}
+              onChange={(e) => { this.setTimestamp(e) }}
+            />
+            <button className='submit-timestamp'
+              onClick={() => this.submitTimestamp()}>Play</button>
+          </container>
+          <container className='url'>
+            <input className='url-input'
+              type='text'
+              placeholder='Paste Song Url'
+              value={url}
+              onChange={(e) => this.setUrl(e)}
+            />
+            <button className='submit-url'
+              onClick={() => this.submitUrl()}>Go</button>
+          </container>
+          <container className='speed'>
+            <button className='speed-up'
+              onClick={() => this.setPlayback('+')}>+Speed</button>
+            <button className='speed-down'
+              onClick={() => this.setPlayback('-')}>-Speed</button>
+          </container>
+          <container className='play-reset'>
+            <button className='play-button' onClick={(e) => this.isPlaying(e)}>{playing? 'Pause': 'Play'}</button>
+            <button className='reset-url' onClick={() => this.resetState()}>Reset</button>
+          </container>
         </section>
       </section>
     )
