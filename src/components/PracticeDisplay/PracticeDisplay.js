@@ -31,11 +31,11 @@ export default class PracticeDisplay extends Component{
 
     render() {
         return (
-            <div classname="practice-container">
-                {this.settings()}
-                <p>{tab}</p>
-                <textarea class="tab-display"></textarea>
-                <button class="settings-button" onClick={this.openSettings()}>Settings</button>
+            <div className="practice-container">
+                <h1></h1>
+
+                <textarea className="tab-display"></textarea>
+                <button className="settings-button" onClick={this.openSettings.bind(this)}>Settings</button>
             </div>
         )
     }

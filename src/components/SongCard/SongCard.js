@@ -10,7 +10,6 @@ export const SongCard =  ({ song }) => {
       <div className='tab-audio'>
         <p>tab</p>
         <p>audio</p>
-        <img src={require('./checkmark.png')} />
       </div>
     </section>
   )
