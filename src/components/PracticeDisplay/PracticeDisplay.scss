@@ -11,6 +11,18 @@
     flex-direction: column;
 }
 
+
+.tab-display {
+    white-space: nowrap;
+    overflow: auto;
+    height: 500px;
+    width: 100%;
+}
+
+.tab-line {
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+}
+
 .controls {
   margin-top: 60%;
   margin-left: auto;
@@ -31,3 +43,4 @@
   border: none;
   color: $black;
 }
+

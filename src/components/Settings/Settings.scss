@@ -24,6 +24,7 @@
 }
 
 .settings-container input {
+  color: $white;
   width: 75%;
   height: 30px;
   border: none;
@@ -42,4 +43,9 @@
 
 #first-container {
   margin-top: 5%;
+}
+
+.setting-tab {
+  height: 60px;
+  width: 75%;
 }

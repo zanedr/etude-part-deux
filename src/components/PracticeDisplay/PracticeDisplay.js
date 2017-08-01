@@ -26,29 +26,45 @@ export default class PracticeDisplay extends Component{
         if(this.state.settings === true) {
             return (
                 <Settings
-                    id={this.props.id}
-                    title={this.props.title}
-                    artist={this.props.artist}
-                    timestamps={this.props.timestamps}
-                    tab={this.props.tab}
-                    audio={this.props.audio}
-                    priority={this.props.priority}
+                    id={this.props.selectedSong.id}
+                    title={this.props.selectedSong.title}
+                    artist={this.props.selectedSong.artist}
+                    timestamps={this.props.selectedSong.timestamps}
+                    tab={this.props.selectedSong.tab}
+                    audio={this.props.selectedSong.audio}
+                    priority={this.props.selectedSong.priority}
                     closeSettings={this.closeSettings.bind(this)} />
             )
         }
+    }
+
+    renderTab() {
+        let parsedTab = JSON.parse(this.props.selectedSong.tab)
+        console.log('PD parsed tab', parsedTab[7] === ' ')
+        return parsedTab.map(line => {
+            if(line === ' ') {
+                return( <div className='tab-line'>.</div>)
+            } else {
+                return( <div className='tab-line'>{line}</div> )
+            }
+        })
     }
 
     render() {
         return (
             <div className="practice-container">
               {this.settings()}
-              <MusicPlayer />
+
+              <MusicPlayer audio={this.state.audio/>
               <container className='controls'>
                 <textarea className="tab-display"></textarea>
                 <button className="settings-button" onClick={this.openSettings.bind(this)}>Edit Song</button>
                 <button onClick={()=> this.props.unselect()} >Return to Song List</button>
               </container>
+             {this.renderTab()}
             </div>
         )
     }
 }
+
+            //   <textarea className="tab-display" value={this.props.selectedSong.tab}></textarea>
