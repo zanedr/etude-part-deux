@@ -8,8 +8,8 @@ export const SongCard =  ({ song, select }) => {
         <p>Artist: {song.artist}</p>
       </div>
       <div className='tab-audio'>
-        <p>tab</p>
-        <p>audio</p>
+        <p><span>&#10004;</span>tab</p>
+        <p><span>&#x2717;</span>audio</p>
       </div>
     </section>
   )
