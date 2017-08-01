@@ -33,4 +33,28 @@ describe('MusicPlayer', () => {
 
     expect(wrapper.state().playing).toBe(true);
   });
+
+  it('should pause a song if it is playing', () => {
+    const wrapper = shallow(<MusicPlayer />);
+    const playBtn = wrapper.find('.play-button');
+
+    playBtn.simulate('click');
+
+    expect(wrapper.state().playing).toBe(true);
+
+    playBtn.simulate('click');
+
+    expect(wrapper.state().playing).toBe(false);
+  });
+
+  it('should speed up the playback of a song', () => {
+    const wrapper = shallow(<MusicPlayer />);
+    const speedUp = wrapper.find('.speed-up');
+
+    expect(wrapper.state().playbackRate).toEqual(1);
+
+    speedUp.simulate('click');
+
+    expect(wrapper.state().playbackRate).toEqual(1.1);
+  });
 });

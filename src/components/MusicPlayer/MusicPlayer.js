@@ -49,11 +49,10 @@ export default class MusicPlayer extends Component {
     })
   }
 
-  setPlayback(e) {
-    const { innerText } = e.target;
+  setPlayback(text) {
     const { playbackRate } = this.state;
 
-    if (e.target.innerText === '+Speed') {
+    if (text === '+') {
       this.setState({
         playbackRate: playbackRate + 0.1
       });
@@ -102,9 +101,9 @@ export default class MusicPlayer extends Component {
           <button className='play-button'
                   onClick={(e) => this.isPlaying(e)}>{playing? 'Pause': 'Play'}</button>
           <button className='speed-up'
-                  onClick={(e) => this.setPlayback(e)}>+Speed</button>
+                  onClick={() => this.setPlayback('+')}>+Speed</button>
           <button className='speed-down'
-                  onClick={(e) => this.setPlayback(e)}>-Speed</button>
+                  onClick={() => this.setPlayback('-')}>-Speed</button>
           <input className='seek-to'
                  type='text'
                  placeholder='Seek To'
