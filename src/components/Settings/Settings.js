@@ -55,30 +55,32 @@ export class Settings extends Component {
             <div className="settings-container">
                 <container className="settings-input">
                     <p className="settings-input-label">Title:</p>
-                    <input className="settings-input setting-title" value={this.state.title} type="text" onChange={(e) => {this.setState({title: e.target.value})}} />
+                    <input className="settings-input setting-title" value={this.state.title} type="text" placeholder='Enter Song Title' onChange={(e) => {this.setState({title: e.target.value})}} />
                 </container>
                 <container className="settings-input">
                     <p className="settings-input-label">Artist:</p>
-                    <input className="settings-input setting-artist" value={this.state.artist} type="text" onChange={(e) => {this.setState({artist: e.target.value})}} />
+                    <input className="settings-input setting-artist" value={this.state.artist} type="text" placeholder='Enter Artist' onChange={(e) => {this.setState({artist: e.target.value})}} />
                 </container>
                 <container className="settings-input">
                     <p className="settings-input-label">Timestamp:</p>
-                    <input className="settings-input setting-timestamp" value={this.state.timestamps} type="text" onChange={(e) => {this.setState({timestamps: e.target.value})}} />
+                    <input className="settings-input setting-timestamp" value={this.state.timestamps} type="text" placeholder='Enter Timestamp' onChange={(e) => {this.setState({timestamps: e.target.value})}} />
                 </container>
                 <container className="settings-input">
                     <p className="settings-input-label">Tab Location:</p>
-                    <input className="settings-input setting-tab" value={this.state.tab} type="text" onChange={(e) => {this.setState({tab: e.target.value})}} />
+                    <input className="settings-input setting-tab" value={this.state.tab} type="text" placeholder='Enter Tab Location' onChange={(e) => {this.setState({tab: e.target.value})}} />
                 </container>
                 <container className="settings-input">
                     <p className="settings-input-label">Audio Location:</p>
-                    <input className="settings-input setting-audio" value={this.state.audio} type="text" onChange={(e) => {this.setState({audio: e.target.value})}} />
+                    <input className="settings-input setting-audio" value={this.state.audio} type="text" placeholder='Enter Audio Location' onChange={(e) => {this.setState({audio: e.target.value})}} />
                 </container>
                 <container className="settings-input">
                     <p className="settings-input-label">Priority:</p>
-                    <input className="settings-input setting-priority" value={this.state.priority} type="text" onChange={(e) => {this.setState({priority: e.target.value})}} />
+                    <input className="settings-input setting-priority" value={this.state.priority} type="text" placeholder='Priority' onChange={(e) => {this.setState({priority: e.target.value})}} />
                 </container>
-                <button className="settings-button save-settings" onClick={(e) => {this.saveSettings()}}>Save</button>
-                <button className="settings-button close-settings" onClick={(e) => {this.props.closeSettings()}}>Close</button>
+                <container>
+                  <button className="settings-button save-settings" onClick={(e) => {this.saveSettings()}}>Save</button>
+                  <button className="settings-button close-settings" onClick={(e) => {this.props.closeSettings()}}>Close</button>
+                </container>
             </div>
         )
     }

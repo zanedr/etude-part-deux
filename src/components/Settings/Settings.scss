@@ -1,0 +1,31 @@
+@import '../variables';
+
+.settings-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 5% auto;
+  align-items: center;
+}
+
+.settings-container container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.settings-container input {
+  width: 75%;
+  height: 30px;
+  border: none;
+  background: transparent;
+  border-bottom: 3px solid $lightGreen;
+}
+
+.settings-container button {
+  margin: 5% 0;
+  background: $white;
+  width: 45%;
+  border: none;
+  color: $black;
+}

@@ -27,10 +27,7 @@ export default class extends Component {
   }
 
   selectSong(songInfo) {
-    console.log('clicked song')
-    console.log(songInfo)
     this.setState({selectedSong: songInfo})
-    console.log(this.state)
   }
 
   unselectSong(songInfo) {
@@ -42,7 +39,6 @@ export default class extends Component {
       <div className="App">
         {this.displaySelected()}
         <h1>Etude</h1>
-        {/* <PracticeDisplay {...this.state.selectedSong}/> */}
         <SongDisplay select={this.selectSong.bind(this)} songs={this.state.songs}/>
       </div>
     );
