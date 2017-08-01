@@ -5,6 +5,7 @@
 @import './PracticeDisplay/PracticeDisplay';
 @import './Settings/Settings';
 @import './MusicPlayer/MusicPlayer';
+@import './AddSong/AddSong';
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 html,
@@ -19,7 +20,6 @@ body {
 .App {
   background: linear-gradient(#454545, #1c1c1c);
   width: 80%;
-  height: 100vh;
   margin: 0 auto;
   color: $white;
   font-family: 'Poppins', sans-serif;
