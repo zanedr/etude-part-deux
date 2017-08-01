@@ -1,6 +1,23 @@
 import React from 'react';
 
 export const SongCard =  ({ song, select }) => {
+
+  const checkForTab = () => {
+    if(song.tab.length > 5) {
+      return ( <span>&#10004;</span> )
+    } else {
+      return ( <span>&#x2717;</span>)
+    }
+  }
+
+  const checkForAudio = () => {
+    if(song.tab.length > 0) {
+      return ( <span>&#10004;</span> )
+    } else {
+      return ( <span>&#x2717;</span>)
+    }
+  }
+
   return (
     <section className='song'>
       <div onClick={()=> {select(song)}} className='title-artist'>
@@ -8,8 +25,8 @@ export const SongCard =  ({ song, select }) => {
         <p>Artist: {song.artist}</p>
       </div>
       <div className='tab-audio'>
-        <p><span>&#10004;</span>tab</p>
-        <p><span>&#x2717;</span>audio</p>
+        <p>{checkForTab()} tab</p>
+        <p>{checkForAudio()} audio</p>
       </div>
     </section>
   )

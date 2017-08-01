@@ -39,15 +39,20 @@ export default class PracticeDisplay extends Component{
     }
 
     renderTab() {
-        let parsedTab = JSON.parse(this.props.selectedSong.tab)
-        console.log('PD parsed tab', parsedTab[7] === ' ')
-        return parsedTab.map(line => {
-            if(line === ' ') {
-                return( <div className='tab-line'>.</div>)
-            } else {
-                return( <div className='tab-line'>{line}</div> )
-            }
-        })
+        if(this.props.selectedSong.tab.length) {
+            let parsedTab = JSON.parse(this.props.selectedSong.tab)
+            console.log('PD parsed tab', parsedTab[7] === ' ')
+            return parsedTab.map(line => {
+                if(line === ' ') {
+                    return( <div className='tab-line'>.</div>)
+                } else {
+                    return( <div className='tab-line'>{line}</div> )
+                }
+            })
+        } else {
+            return (<div className='tab-line'>No tab exists yet</div> )
+        }
+
     }
 
     render() {
@@ -56,13 +61,13 @@ export default class PracticeDisplay extends Component{
               {this.settings()}
 
               <MusicPlayer audio={this.state.audio}/>
-              <container className="tab-container">
-                {this.renderTab()}
-             </container>
               <container className='controls'>
                 <button className="settings-button" onClick={this.openSettings.bind(this)}>Edit Song</button>
                 <button onClick={()=> this.props.unselect()} >Return to Song List</button>
               </container>
+              <container className="tab-container">
+                {this.renderTab()}
+             </container>
             </div>
         )
     }

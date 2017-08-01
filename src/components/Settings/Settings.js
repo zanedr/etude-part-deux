@@ -75,7 +75,7 @@ export class Settings extends Component {
                 </container>
                 <container className="settings-input">
                     <p className="settings-input-label">Paste Tab Here:</p>
-                    <textarea className="settings-input setting-tab" value={JSON.parse(this.state.tab)} type="text" placeholder='Enter Tab Location' onChange={(e) => {this.setState({tab: e.target.value})}} ></textarea>
+                    <textarea className="settings-input setting-tab" value={this.state.tab} type="text" onChange={(e) => {this.setState({tab: e.target.value})}} ></textarea>
                 </container>
                 <container className="settings-input">
                     <p className="settings-input-label">Audio Location:</p>
