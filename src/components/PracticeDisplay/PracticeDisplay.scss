@@ -1,7 +1,7 @@
 @import '../variables';
 
 .practice-container {
-    background: linear-gradient(#454545, #1c1c1c);
+    background: $black;
     height: 100%;
     width: 80%;
     position: absolute;
@@ -9,4 +9,25 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+}
+
+.controls {
+  margin-top: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  // align-items: center;
+}
+
+.controls button {
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  background: $lightGreen;
+  width: 50%;
+  height: 30px;
+  border: none;
+  color: $black;
 }

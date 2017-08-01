@@ -6,7 +6,7 @@ export default class PracticeDisplay extends Component{
     constructor(props){
         super(props)
         this.state = {
-          settings: true,
+          settings: false,
         }
     }
 
@@ -43,9 +43,11 @@ export default class PracticeDisplay extends Component{
             <div className="practice-container">
               {this.settings()}
               <MusicPlayer />
-              <textarea className="tab-display"></textarea>
-              <button className="settings-button" onClick={this.openSettings.bind(this)}>Settings</button>
-              <button onClick={()=> this.props.unselect()} >Return to Song List</button>
+              <container className='controls'>
+                <textarea className="tab-display"></textarea>
+                <button className="settings-button" onClick={this.openSettings.bind(this)}>Edit Song</button>
+                <button onClick={()=> this.props.unselect()} >Return to Song List</button>
+              </container>
             </div>
         )
     }
