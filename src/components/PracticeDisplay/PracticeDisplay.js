@@ -54,10 +54,14 @@ export default class PracticeDisplay extends Component{
         return (
             <div className="practice-container">
               {this.settings()}
-              <MusicPlayer audio={this.state.audio} />
-              <button className="settings-button" onClick={this.openSettings.bind(this)}>Settings</button>
-              <button onClick={()=> this.props.unselect()} >Return to Song List</button>
-              {this.renderTab()}
+
+              <MusicPlayer audio={this.state.audio/>
+              <container className='controls'>
+                <textarea className="tab-display"></textarea>
+                <button className="settings-button" onClick={this.openSettings.bind(this)}>Edit Song</button>
+                <button onClick={()=> this.props.unselect()} >Return to Song List</button>
+              </container>
+             {this.renderTab()}
             </div>
         )
     }
