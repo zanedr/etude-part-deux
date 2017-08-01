@@ -5,17 +5,17 @@ export const mockSongs = [
         date_added: "",
         priority: 4,
         timestamps: [],
-        tab: "stairway.json",
-        audio: "./stubData/music/Stairway.mp3"
+        tab: "./tabs/stairway.txt",
+        audio: "https://www.youtube.com/watch?v=IS6n2Hx9Ykk"
     },
     {
-        title: "Blues Claire",
+        title: "Blues Clair",
         artist: "Django Reinhardt",
         date_added: "",
         priority: 3,
         timestamps: [],
-        tab: "bluesclaire",
-        audio: "./stubData/music/BluesClaire.mp3"
+        tab: "./tabs/bluesclair.txt",
+        audio: "https://www.youtube.com/watch?v=RMZHm4KB7Ps"
     },
     {
         title: "So What",
@@ -23,8 +23,8 @@ export const mockSongs = [
         date_added: "",
         priority: 2,
         timestamps: [],
-        tab: "",
-        audio: "./stubData/music/BluesClaire.mp3"
+        tab: "./tabs/sowhat.txt",
+        audio: "https://www.youtube.com/watch?v=ylXk1LBvIqU"
     },
     {
         title: "Everybody Wants To Rule The World",
@@ -32,8 +32,8 @@ export const mockSongs = [
         date_added: "",
         priority: 1,
         timestamps: [],
-        tab: "",
-        audio: "./stubData/music/Everybody.mp3"
+        tab: "./tabs/everybody.txt",
+        audio: "https://www.youtube.com/watch?v=ST86JM1RPl0"
     },
     {
         title: "Wake Me Up Before You Go Go",
@@ -41,7 +41,7 @@ export const mockSongs = [
         date_added: "",
         priority: 5,
         timestamps: [],
-        tab: "",
-        audio: "./stubData/music/jesuswhy.mp3"
+        tab: "./tabs/wakemeup.txt",
+        audio: "https://www.youtube.com/watch?v=pIgZ7gMze7A"
     },
 ]
