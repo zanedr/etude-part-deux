@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
       table.string('title').notNullable();
       table.string('artist');
       table.string('audio');
-      table.string('tab');
+      table.text('tab');
       table.integer('priority');
       table.string('timestamps');
 
