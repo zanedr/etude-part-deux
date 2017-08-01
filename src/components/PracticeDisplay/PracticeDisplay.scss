@@ -3,7 +3,7 @@
 .practice-container {
     background: $black;
     height: 100%;
-    width: 80%;
+    width: 90%;
     position: absolute;
     z-index: 2;
     margin: 0 auto;
@@ -20,16 +20,18 @@
 }
 
 .tab-container {
-    margin-top: 50%;
+    margin-top: 20%;
+    background: $black;
 }
 
 .tab-line {
     height: 30px;
     font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+    text-align: center;
 }
 
 .controls {
-//   margin-top: 60%;
+  margin-top: 40%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -47,5 +49,6 @@
   height: 30px;
   border: none;
   color: $black;
+  padding-top: 5px;
+  padding-bottom: 22px;
 }
-
