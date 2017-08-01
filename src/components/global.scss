@@ -3,6 +3,7 @@
 @import './SongCard/SongCard';
 @import './SongDisplay/SongDisplay';
 @import './PracticeDisplay/PracticeDisplay';
+@import './Settings/Settings';
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 html,
@@ -15,7 +16,6 @@ body {
 }
 
 .App {
-  background: $black;
   background: linear-gradient(#454545, #1c1c1c);
   width: 80%;
   height: 100vh;
