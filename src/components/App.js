@@ -35,7 +35,8 @@ export default class extends Component {
   // }
 
   selectSong(songInfo) {
-    this.setState({selectedSong: {}})
+    console.log('clicked song')
+    // this.setState({selectedSong: {}})
   }
 
   unselectSong(songInfo) {
