@@ -112,7 +112,7 @@ export default class MusicPlayer extends Component {
                />
           <button className='submit-timestamp'
                   onClick={() => this.submitTimestamp()}>Go</button>
-          <input className='paste-url'
+          <input className='url-input'
                  type='text'
                  placeholder='Paste Song Url'
                  value={url}

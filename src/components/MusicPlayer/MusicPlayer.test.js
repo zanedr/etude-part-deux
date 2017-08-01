@@ -60,11 +60,11 @@ describe('MusicPlayer', () => {
 
   it('should slow down the playback of a song', () => {
     const wrapper = shallow(<MusicPlayer />);
-    const speedUp = wrapper.find('.speed-down');
+    const speedDown = wrapper.find('.speed-down');
 
     expect(wrapper.state().playbackRate).toBe(1);
 
-    speedUp.simulate('click');
+    speedDown.simulate('click');
 
     expect(wrapper.state().playbackRate).toBe(0.9);
   });
@@ -81,5 +81,45 @@ describe('MusicPlayer', () => {
 
     expect(wrapper.state().timestamp).toBe('1:30');
     expect(wrapper.state().playing).toBe(true);
+  });
+
+  it('should allow users to paste in a song url', () => {
+    const wrapper = shallow(<MusicPlayer />);
+    const input = wrapper.find('.url-input');
+    const submitBtn = wrapper.find('.submit-url');
+
+    expect(wrapper.state().url).toBe('');
+
+    input.simulate('change', {target: {value: 'fake.news'}});
+    submitBtn.simulate('click');
+
+    expect(wrapper.state().url).toBe('fake.news');
+    expect(wrapper.state().playing).toBe(true);
+  });
+
+  it('should all users to reset the state of the app', () => {
+    const wrapper = shallow(<MusicPlayer />);
+    const urlInput = wrapper.find('.url-input');
+    const timestampInput = wrapper.find('.seek-to');
+    const speedUp = wrapper.find('.speed-up');
+    const submitBtn = wrapper.find('.submit-url');
+    const resetBtn = wrapper.find('.reset-url');
+
+    urlInput.simulate('change', {target: {value: 'fake.news'}});
+    timestampInput.simulate('change', {target: {value: '1:30'}});
+    speedUp.simulate('click');
+    submitBtn.simulate('click');
+
+    expect(wrapper.state().url).toBe('fake.news');
+    expect(wrapper.state().timestamp).toBe('1:30');
+    expect(wrapper.state().playbackRate).toBe(1.1);
+    expect(wrapper.state().playing).toBe(true);
+
+    resetBtn.simulate('click');
+
+    expect(wrapper.state().url).toBe('');
+    expect(wrapper.state().timestamp).toBe('');
+    expect(wrapper.state().playbackRate).toBe(1);
+    expect(wrapper.state().playing).toBe(false);
   });
 });
