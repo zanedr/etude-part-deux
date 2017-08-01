@@ -23,7 +23,7 @@ const mockSongs = [
         date_added: "",
         priority: 4,
         timestamps: [],
-        tab: "stairway.json",
+        tab: "[]",
         audio: "./stubData/music/Stairway.mp3"
     },
     {
@@ -32,7 +32,7 @@ const mockSongs = [
         date_added: "",
         priority: 3,
         timestamps: [],
-        tab: "bluesclaire",
+        tab: "[]",
         audio: "./stubData/music/BluesClaire.mp3"
     },
     {
@@ -41,7 +41,7 @@ const mockSongs = [
         date_added: "",
         priority: 2,
         timestamps: [],
-        tab: "",
+        tab: "[]",
         audio: "./stubData/music/BluesClaire.mp3"
     },
     {
@@ -50,7 +50,7 @@ const mockSongs = [
         date_added: "",
         priority: 1,
         timestamps: [],
-        tab: "",
+        tab: "[]",
         audio: "./stubData/music/Everybody.mp3"
     },
     {
@@ -59,7 +59,7 @@ const mockSongs = [
         date_added: "",
         priority: 5,
         timestamps: [],
-        tab: "",
+        tab: "[]",
         audio: "./stubData/music/jesuswhy.mp3"
     },
 ]
