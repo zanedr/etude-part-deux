@@ -19,12 +19,17 @@
     width: 100%;
 }
 
+.tab-container {
+    margin-top: 50%;
+}
+
 .tab-line {
+    height: 30px;
     font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
 }
 
 .controls {
-  margin-top: 60%;
+//   margin-top: 60%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
