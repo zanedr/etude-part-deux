@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 require('./global.scss');
 import { SongDisplay } from './SongDisplay/SongDisplay'
-import { PracticeDisplay } from './PracticeDisplay/PracticeDisplay'
+import PracticeDisplay from './PracticeDisplay/PracticeDisplay'
 import { mockSongs } from '../../mock-data/songs.js'
 
 
@@ -46,8 +46,8 @@ export default class extends Component {
     return (
       <div className="App">
         <h1>Etude</h1>
-        <PracticeDisplay {...this.state.selectedSong}/>
-        {/* <SongDisplay unselect={this.unselectSong.bind(this)} select={this.selectSong.bind(this)} songs={this.state.songs}/> */}
+        {/* <PracticeDisplay {...this.state.selectedSong}/> */}
+        <SongDisplay unselect={this.unselectSong.bind(this)} select={this.selectSong.bind(this)} songs={this.state.songs}/>
       </div>
     );
   }
