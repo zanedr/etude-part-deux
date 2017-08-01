@@ -4,6 +4,7 @@
 @import './SongDisplay/SongDisplay';
 @import './PracticeDisplay/PracticeDisplay';
 @import './Settings/Settings';
+@import './MusicPlayer/MusicPlayer';
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 html,
@@ -28,5 +29,9 @@ body {
 }
 
 h1 {
-  margin-top: 0;
+  margin-top: 5%;
+}
+
+button {
+  cursor: pointer;
 }

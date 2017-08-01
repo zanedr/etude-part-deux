@@ -53,7 +53,7 @@ export class Settings extends Component {
     render() {
         return(
             <div className="settings-container">
-                <container className="settings-input">
+                <container id='first-container' className="settings-input">
                     <p className="settings-input-label">Title:</p>
                     <input className="settings-input setting-title" value={this.state.title} type="text" placeholder='Enter Song Title' onChange={(e) => {this.setState({title: e.target.value})}} />
                 </container>
