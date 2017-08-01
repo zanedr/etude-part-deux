@@ -1,0 +1,79 @@
+"So What" (Miles Davis)--opening "theme"
+ =========
+ -- comp. Miles Davis & Bill Evans (from _Kind_of_Blue_, 1959)
+   -- guitar arr., tcg, '8?, '94
+   -- 4/4 // Keys: Dm; Ebm // Allegro
+                                                     __3__
+   -- eighth notes (1 &) are "swing" 8ths: closer to 1 & & . . . .
+                                                     DAH duh
+   -- what follows is the opening of the tune (after some Debussy-esque
+       ad-lib piano diddling by Evans), apparently the only pre-composed
+       part of the song; it's a neat interplay of bluesy bass and quartal
+       piano chords, both integrated into the following guitar "arrangement":
+
+ Form (32-bar): ||: A (8 measures) - A (8) - B (8) - A (8) :||
+
+ {pick-up measure}  A::    Em7/11 Dm7/11                         Em7/11 Dm7/11
+                  	          7     5 -------------------------------- 7     5 
+                  	          8     6 -------------------------------- 8     6 
+                  	o         7     5 -------------------------------- 7     5 
+                  	o         7     5 -------------------------------- 7     5 
+           5 /7   	  5       7     5  	          5 /7    	  5       7     5 
+   3/5 7 8      8 	                   	  3/5 7 8      8  	    5             
+ 1 & 2 & 3 &  4 &     1 & 2 & 3 & 4 &   1 & 2 & 3 &  4 &     1 & 2 & 3 & 4 &
+
+                           Em7/11 Dm7/11                         Em7/11 Dm7/11
+--------------------------------7     5 -------------------------------- 7     5 
+--------------------------------8     6 -------------------------------- 7     5 
+--------------------------------7     5 -------------------------------- 7     5 
+--------------------------------7     5 -------------------------------- 7     5 
+ 	          5 /7    	 5       7     5  	   5/7  /7  /7 5  	  5       7     5 
+ 	  3/5 7 8      8 --------------------------------         	                  
+  1 & 2 & 3 &  4 &    1 & 2 & 3 & 4 &    1 & 2 & 3 & 4 &     1 & 2 & 3 & 4 &
+
+  __________________ __________________
+ | 1.     [repeat A]| 2.       [to B->]
+ 	                 	                   
+ 	                 	                   
+ 	                o	                   
+ 	                o	                   
+ 	          5 /7   	          6 /8     
+ 	  3/5 7 8      8 	  4/6 8 9      9   
+  1 & 2 & 3 &  4 &   1 & 2 & 3 &  4 &
+
+ B::    Fm7/11 Ebm7/11                        Fm7/11 Ebm7/11
+ 	         8     6 -------------------------------- 8     6 	                  
+ 	         9     7 -------------------------------- 9     7 	                  
+ 	         8     6 -------------------------------- 8     6 	                  
+ 	         8     6 -------------------------------- 8     6 	                  
+ 	 6       8     6  	          6 /8    	  6       8     6 	          6 /8    
+ 	                  	  4/6 8 9      9  	    6             	  4/6 8 9      9  
+   1 & 2 & 3 & 4 &   1 & 2 & 3 &  4 &     1 & 2 & 3 & 4 &  1 & 2 & 3 &  4 &
+
+        Fm7/11 Ebm7/11                        Fm7/11 Ebm7/11          [to A->]
+ 	         8     6 -------------------------------- 8     6 	                 
+ 	         9     7 -------------------------------- 9     7 	                 
+ 	         8     6 -------------------------------- 8     6 	                o
+ 	         8     6 -------------------------------- 8     6 	                o
+ 	 6       8     6  	          6 /8    	  6       8     6 	          5 /7   
+ 	                  	  4/6 8 9      9  	    6             	  3/5 7 8      8 
+   1 & 2 & 3 & 4 &   1 & 2 & 3 &  4 &     1 & 2 & 3 & 4 &  1 & 2 & 3 &  4 &
+
+ --------------------------------------------------------------|
+ ... rest of tune a free-form improv over the same A-A-B-A 32--|bar form: two
+ 8-bar sections ("A-A") of Dm dorian, 8 bars of Ebm dorian ("B"), and 8 more
+ bars ("A") of Dm dorian. The bass starts "walking," the piano comps/
+ ad-libs quartal-modal chord voicings, and Miles & the other horn players
+ take leads in Dm & Ebm Dorian. (Dorian in Dm: d-e-f-g-a-b-c-d; Eb Dorian
+ a half-step higher). . . . Here's the start of Miles' lead, to give you a
+ better idea (note that the D dorian scale "fits" whether the chord is Dm7/11
+ or Em7/11: both consist of notes from this very scale)--
+
+ {pick-up}  A::
+  10     --------------------------------         	            
+          	                  	      10 8    10  	            
+          	  7               	  10              	  7 7       
+         --------------------------------         	            
+         --------------------------------         	            
+         --------------------------------         	            
+  3 & 4 &     1   2   3   4     1 & 2 & 3 & 4 &     1 & 2 &
