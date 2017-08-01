@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 require('./global.scss');
 import { SongDisplay } from './SongDisplay/SongDisplay'
-import { PracticeDisplay } from './PracticeDisplay/PracticeDisplay'
+import PracticeDisplay from './PracticeDisplay/PracticeDisplay'
 import { mockSongs } from '../../mock-data/songs.js'
 
 
