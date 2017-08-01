@@ -1,6 +1,8 @@
-// #song-container {
-//   display: flex;
-//   flex-direction: column;
-//   margin-top: 20%;
-//   background: magenta;
-// }
+@import '../variables';
+
+#songs-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+}

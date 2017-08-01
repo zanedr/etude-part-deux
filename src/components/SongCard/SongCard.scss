@@ -1,7 +1,13 @@
 @import '../variables';
 
 .song {
-  border-bottom: 1px solid $white;
-  width: 80%;
+  border-bottom: 1px groove $white;
+  width: 90%;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab-audio {
+  margin-top: 0.8em;
 }
