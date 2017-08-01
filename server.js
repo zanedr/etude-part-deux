@@ -2,6 +2,7 @@ var path = require('path');
 var express = require('express');
 var app = express();
 var PORT = process.env.PORT || 8080
+const bodyParser = require('body-parser');
 
 // using webpack-dev-server and middleware in development environment
 if(process.env.NODE_ENV !== 'production') {
@@ -14,6 +15,9 @@ if(process.env.NODE_ENV !== 'production') {
   app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
   app.use(webpackHotMiddleware(compiler));
 }
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const environment = process.env.NODE_ENV || 'development';
 const configuration = require('./knexfile')[environment];
@@ -64,6 +68,8 @@ app.post('/api/v1/songs', (req, res) => {
 //**************PATCH REQUESTS***********************//
 
 app.patch('/api/v1/songs', (req, res) => {
+  console.log('PATCH', req.body)
+
   const title = req.body.title
   const artist = req.body.artist || '';
   const audio = req.body.audio || '';
