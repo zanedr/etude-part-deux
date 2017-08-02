@@ -64,6 +64,7 @@ export class Settings extends Component {
           method: 'DELETE',
           headers: { 'Content-Type' : 'application/json' },
           body: JSON.stringify({
+              'artist': this.state.artist,
               'title': this.state.title
           })
       })

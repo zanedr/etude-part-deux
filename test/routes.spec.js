@@ -128,7 +128,15 @@ describe('API Routes', () => {
     it('should delete a song successfully', (done) => {
       chai.request(server)
       .delete('/api/v1/songs')
-      .send()
+      .send({
+        title: 'Stairway to Heaven'
+      })
+      .end((err, response) => {
+        response.should.have.status(204);
+        response.body.should.be.a('object');
+        response.body.should.have.property('success');
+        response.body.
+      })
     })
   })
 });
