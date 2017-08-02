@@ -63,30 +63,68 @@ describe('API Routes', () => {
       chai.request(server)
       .post('/api/v1/songs')
       .send({
-        title: 'A Whole New World'
+        title: 'Brand New'
       })
       .end((err, response) => {
         response.should.have.status(201);
         response.body.should.be.a('object');
         response.body.should.have.property('success');
-        response.body.success.should.equal('Song A Whole New World added to database.');
+        response.body.success.should.equal('Song Brand New added to database.');
+        done();
+      });
+    });
+
+    it('should return an error if title of song is missing', (done) => {
+      chai.request(server)
+      .post('/api/v1/songs')
+      .send({
+        title: ''
+      })
+      .end((err, response) => {
+        response.should.have.status(422);
+        response.body.should.be.a('object');
+        response.body.should.have.property('error');
+        response.body.error.should.equal('Please include a song title.');
         done();
       });
     });
   });
 
-  it('should return an error if title of song is missing', (done) => {
-    chai.request(server)
-    .post('/api/v1/songs')
-    .send({
-      title: ''
+  describe('PATCH /api/v1/songs', () => {
+    it('should update a song in the database', (done) => {
+      chai.request(server)
+      .patch('/api/v1/songs')
+      .send({
+        title: 'A Whole New World',
+        id: 2
+      })
+      .end((err, response) => {
+        response.should.have.status(201);
+        response.body.should.be.a('object');
+        response.body.should.have.property('success');
+        response.body.success.should.equal('Song entitled A Whole New World updated to reflect changes.')
+        done();
+      })
     })
-    .end((err, response) => {
-      response.should.have.status(422);
-      response.body.should.be.a('object');
-      response.body.should.have.property('error');
-      response.body.error.should.equal('Please include a song title.');
-      done();
+
+    it('should not update a song that does not exist', () => {
+      chai.request(server)
+      .patch('/api/v1/songs')
+      .send({
+        title: 'This Does Not Exist',
+        id: 21312312412
+      })
+      .end((err, response) => {
+        response.should.have.status(404);
+        response.body.should.be.a('object');
+        response.body.should.have.property('error');
+        response.body.success.should.equal('Song does not exist in database.')
+        done();
+      });
     });
   });
+
+
+
+
 });
