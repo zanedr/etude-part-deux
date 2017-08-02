@@ -7,7 +7,12 @@ export default class PracticeDisplay extends Component{
         super(props)
         this.state = {
           settings: false,
+          tab: ''
         }
+    }
+
+    componentWillMount() {
+        this.setState({tab: this.props.selectedSong.tab})
     }
 
     openSettings() {
@@ -22,15 +27,21 @@ export default class PracticeDisplay extends Component{
         }
     }
 
+    updateTab(tab) {
+        this.setState({tab: tab})
+    }
+
     settings() {
         if(this.state.settings === true) {
             return (
                 <Settings
+                    updateTab={this.updateTab.bind(this)}
+                    closeOut={this.props.unselect}
                     id={this.props.selectedSong.id}
                     title={this.props.selectedSong.title}
                     artist={this.props.selectedSong.artist}
                     timestamps={this.props.selectedSong.timestamps}
-                    tab={this.props.selectedSong.tab}
+                    tab={this.state.tab}
                     audio={this.props.selectedSong.audio}
                     priority={this.props.selectedSong.priority}
                     closeSettings={this.closeSettings.bind(this)} />
@@ -40,7 +51,7 @@ export default class PracticeDisplay extends Component{
 
     renderTab() {
         if(this.props.selectedSong.tab.length) {
-            let parsedTab = JSON.parse(this.props.selectedSong.tab)
+            let parsedTab = JSON.parse(this.state.tab)
             console.log('PD parsed tab', parsedTab[7] === ' ')
             return parsedTab.map(line => {
                 if(line === ' ') {
@@ -62,7 +73,7 @@ export default class PracticeDisplay extends Component{
 
               <MusicPlayer audioUrl={this.props.selectedSong.audio}/>
               <container className='controls'>
-                <button className="settings-button" onClick={() => this.openSettings.bind(this)}>Edit Song</button>
+                <button className="settings-button" onClick={this.openSettings.bind(this)}>Edit Song</button>
                 <button onClick={()=> this.props.unselect()} >Return to Song List</button>
               </container>
               <h3 className="song-info">Now viewing: <span className="title-and-artist">{`${this.props.selectedSong.title} - ${this.props.selectedSong.artist}`}</span></h3>
