@@ -16,7 +16,7 @@ const createSong = (knex) => {
   });
 };
 
-export const mockSongs = [
+const mockSongs = [
     {
         title: "Stairway to Heaven",
         artist: "Led Zeppelin",
