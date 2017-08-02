@@ -56,7 +56,7 @@ app.post('/api/v1/songs', (req, res) => {
   .then((newSong) => {
     return res.status(201).send({
       success: `Song ${title} added to database.`,
-    })
+    });
   })
   .catch(error => res.status(500).send(error));
 });
@@ -77,7 +77,7 @@ app.patch('/api/v1/songs', (req, res) => {
     if (!song.length) {
       return res.status(404).send({
         error: 'Song does not exist in database.'
-      })
+      });
     } else {
       database('songs').where('id', song[0].id).update({
         'title': title,
@@ -90,7 +90,7 @@ app.patch('/api/v1/songs', (req, res) => {
       .then((updatedSong) => {
         return res.status(201).send({
           success: `Song entitled ${title} updated to reflect changes.`
-        })
+        });
       })
       .catch(error => res.status(500).send(error));
     }
@@ -104,7 +104,9 @@ app.delete('/api/v1/songs', (req, res) => {
   database('songs').where({'artist': artist, 'title': title}).select()
   .then(song => {
     if (!song.length) {
-      return res.status(404).send('Song does not exist in database.')
+      return res.status(404).send({
+        error: 'Song does not exist in database.'
+      });
     } else {
       database('songs').where('id', song[0].id).del()
       .then(() => {

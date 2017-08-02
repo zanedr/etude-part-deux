@@ -138,7 +138,23 @@ describe('API Routes', () => {
         response.body.should.have.property('success');
         response.body.success.should.equal('Song entitled Stairway to Heaven has been deleted from database.');
         done();
+      });
+    });
+
+    it('should not delete a song if it does not exist', (done) => {
+      chai.request(server)
+      .delete('/api/v1/songs')
+      .send({
+        artist: 'Not There',
+        title: 'Juke, You Thought'
       })
-    })
-  })
+      .end((err, response) => {
+        response.should.have.status(404);
+        response.body.should.be.a('object');
+        response.body.should.have.property('error');
+        response.body.error.should.equal('Song does not exist in database.');
+        done();
+      });
+    });
+  });
 });
