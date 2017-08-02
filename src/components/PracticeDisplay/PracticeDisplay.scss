@@ -40,13 +40,14 @@
 }
 
 .controls button {
+  font-weight: 200;
   margin: 2% 0 0;
   background: $lightGreen;
   width: 50%;
   height: 30px;
   border: none;
   color: $black;
-  padding-top: 5px;
+  padding-top: 6px;
   padding-bottom: 22px;
   transition-duration: 0.2s;
   &:hover{

@@ -26,6 +26,7 @@ export default class PracticeDisplay extends Component{
         if(this.state.settings === true) {
             return (
                 <Settings
+                    closeOut={this.props.unselect}
                     id={this.props.selectedSong.id}
                     title={this.props.selectedSong.title}
                     artist={this.props.selectedSong.artist}
@@ -62,7 +63,7 @@ export default class PracticeDisplay extends Component{
 
               <MusicPlayer audioUrl={this.props.selectedSong.audio}/>
               <container className='controls'>
-                <button className="settings-button" onClick={() => this.openSettings.bind(this)}>Edit Song</button>
+                <button className="settings-button" onClick={this.openSettings.bind(this)}>Edit Song</button>
                 <button onClick={()=> this.props.unselect()} >Return to Song List</button>
               </container>
               <h3 className="song-info">Now viewing: <span className="title-and-artist">{`${this.props.selectedSong.title} - ${this.props.selectedSong.artist}`}</span></h3>
