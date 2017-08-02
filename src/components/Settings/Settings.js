@@ -52,6 +52,7 @@ export class Settings extends Component {
         })
         .then(() => {
             console.log('patch good')
+            this.setState({tab: processedTab})
         })
         .catch(() => {
             console.log(error)
