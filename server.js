@@ -108,8 +108,8 @@ app.delete('/api/v1/songs', (req, res) => {
     } else {
       database('songs').where('id', song[0].id).del()
       .then(() => {
-        return res.status(204).send({
-          success: `Song entitled ${title} has been deleted from database`,
+        return res.status(200).send({
+          success: `Song entitled ${title} has been deleted from database.`
         });
       })
       .catch(error => res.status(500).send(error));
