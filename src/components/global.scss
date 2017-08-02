@@ -37,6 +37,8 @@ button {
   cursor: pointer;
 }
 
+button:focus {outline: none}
+
 .main-title {
   display: flex;
   justify-content: space-between;
