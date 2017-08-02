@@ -16,16 +16,15 @@ export class Settings extends Component {
     }
 
     componentWillMount() {
-        this.setState({
-            id: this.props.id,
-            title: this.props.title,
-            artist: this.props.artist,
-            timestamps: this.props.timestamps,
-            tab: this.props.tab,
-            audio: this.props.audio,
-            priority: this.props.priority
-        })
-        console.log('WILL MOUNT', this.state)
+      this.setState({
+          id: this.props.id,
+          title: this.props.title,
+          artist: this.props.artist,
+          timestamps: this.props.timestamps,
+          tab: this.props.tab,
+          audio: this.props.audio,
+          priority: this.props.priority
+      })
     };
 
     saveSettings() {
