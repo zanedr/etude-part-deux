@@ -36,8 +36,7 @@ export class Settings extends Component {
                 processedTab.push(interiorLine)
             })
         })
-        console.log('patch client side', processedTab)
-        console.log('patch client side double', processDoubleLineBreaksTab)
+
         fetch('/api/v1/songs', {
             method: 'PATCH',
             headers: { 'Content-Type' : 'application/json' },
@@ -58,9 +57,28 @@ export class Settings extends Component {
             console.log(error)
         })
     }
+
+    deleteSong() {
+      console.log('delete song clicked')
+      fetch('/api/v1/songs/delete', {
+          method: 'DELETE',
+          headers: { 'Content-Type' : 'application/json' },
+          body: JSON.stringify({
+              'id': this.state.id,
+              'title': this.state.title
+          })
+      })
+      .then(() => {
+          console.log('delete successful')
+      })
+      .catch(() => {
+          console.log(error)
+      })
+    }
     render() {
         return(
             <div className="settings-container">
+                <button id='delete-song-button' onClick={()=> this.deleteSong()}>Delete Song</button>
                 <container id='first-container' className="settings-input">
                     <p className="settings-input-label">Title:</p>
                     <input className="settings-input setting-title" value={this.state.title} type="text" placeholder='Enter Song Title' onChange={(e) => {this.setState({title: e.target.value})}} />
