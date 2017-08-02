@@ -60,8 +60,10 @@ export default class extends Component {
     return (
       <div className="App">
         {this.displaySelected()}
-        <h1>Etude</h1>
-        <button className="add-song-button" onClick={() => this.setState({addSong: true})}>Add Song</button>
+        <div className="main-title">
+          <h1>Etude</h1>
+          <button className="add-song-button" onClick={() => this.setState({addSong: true})}>Add Song</button>
+        </div>
         {this.addSong()}
         <SongDisplay select={this.selectSong.bind(this)} songs={this.state.songs}/>
       </div>
