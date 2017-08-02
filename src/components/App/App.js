@@ -1,9 +1,9 @@
 require('../global.scss');
 import React, { Component } from 'react';
-import { SongDisplay } from '../SongDisplay/SongDisplay'
-import PracticeDisplay from '../PracticeDisplay/PracticeDisplay'
-import { mockSongs } from '../../../mock-data/songs.js'
-import { AddSong } from '../AddSong/AddSong'
+import { SongDisplay } from '../SongDisplay/SongDisplay';
+import PracticeDisplay from '../PracticeDisplay/PracticeDisplay';
+import { mockSongs } from '../../../mock-data/songs.js';
+import { AddSong } from '../AddSong/AddSong';
 
 
 export default class App extends Component {
@@ -48,7 +48,7 @@ export default class App extends Component {
 
   unselectSong() {
     this.setState({selectedSong: {}})
-    fetch('api/v1/songs')
+    fetch('/api/v1/songs')
     .then(res => res.text())
     .then(songs => {
       let songList = JSON.parse(songs)
