@@ -71,7 +71,22 @@ describe('API Routes', () => {
         response.body.should.have.property('success');
         response.body.success.should.equal('Song A Whole New World added to database.');
         done();
-      })
+      });
+    });
+  });
+
+  it('should return an error if title of song is missing', (done) => {
+    chai.request(server)
+    .post('/api/v1/songs')
+    .send({
+      title: ''
     })
-  })
+    .end((err, response) => {
+      response.should.have.status(422);
+      response.body.should.be.a('object');
+      response.body.should.have.property('error');
+      response.body.error.should.equal('Please include a song title.');
+      done();
+    });
+  });
 });
