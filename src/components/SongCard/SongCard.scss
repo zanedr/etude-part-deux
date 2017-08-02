@@ -24,3 +24,24 @@
 .negative {
   color: red;
 }
+
+@media screen and (max-width: 450px) {
+    h2 {
+      font-size: 18px;
+      // width: 70%;
+    }
+
+    p{
+      // width: 70%;
+      margin-right: none;
+    }
+
+    .title-artist {
+      width: 60%;
+    }
+
+    .song{ 
+      width: 90%;
+    }
+
+}

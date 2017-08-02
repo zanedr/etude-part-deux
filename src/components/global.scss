@@ -61,3 +61,39 @@ button {
   transition-duration: 0.2s;
   }
 }
+
+@media screen and (max-width: 900px) {
+    .add-song-button {
+      width: 150px;
+    }
+
+
+}
+
+@media screen and (max-width: 450px) {
+    .add-song-button {
+      width: 150px;
+    }
+
+    .main-title{
+      flex-direction: column;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 40px 0;
+      width: 100%;
+    }
+
+    .add-song-button{
+      margin: 0 auto 30px;;
+    }
+
+    .App {
+      width: 100%;
+    }
+
+    html, body {
+      background-color: $black;
+    }
+}

@@ -45,13 +45,38 @@
   margin: 0;
   background: $lightGreen;
   width: 50%;
-  height: 30px;
+  height: 40px;
   border: none;
+  border-right: 1px grey solid;
+  border-left: 1px grey solid;
   color: $black;
-  padding-top: 6px;
+  padding-top: 11px;
   padding-bottom: 22px;
   transition-duration: 0.2s;
+  &:focus{
+      outline: 0;
+  };
   &:hover{
       background-color: $white;
   }
+}
+
+@media screen and (max-width: 900px) {
+    .tab-line{
+        font-size: 13px;
+        width: 600px;
+        overflow-x: scroll;
+        margin-left: 0;
+    }
+
+    .practice-container {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .controls button {
+       margin-top: 130px;
+    }
 }
