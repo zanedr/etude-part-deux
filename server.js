@@ -56,7 +56,7 @@ app.post('/api/v1/songs', (req, res) => {
   .then((newSong) => {
     return res.status(201).send({
       success: `Song ${title} added to database.`,
-    })
+    });
   })
   .catch(error => res.status(500).send(error));
 });
@@ -77,7 +77,7 @@ app.patch('/api/v1/songs', (req, res) => {
     if (!song.length) {
       return res.status(404).send({
         error: 'Song does not exist in database.'
-      })
+      });
     } else {
       database('songs').where('id', song[0].id).update({
         'title': title,
@@ -90,7 +90,7 @@ app.patch('/api/v1/songs', (req, res) => {
       .then((updatedSong) => {
         return res.status(201).send({
           success: `Song entitled ${title} updated to reflect changes.`
-        })
+        });
       })
       .catch(error => res.status(500).send(error));
     }
@@ -98,18 +98,20 @@ app.patch('/api/v1/songs', (req, res) => {
 });
 
 //**************DELETE REQUESTS***********************//
-app.delete('/api/v1/songs/delete', (req, res) => {
-  const { id, title } = req.body;
-  database('songs').where('id', id).select()
+app.delete('/api/v1/songs', (req, res) => {
+  const { artist, title } = req.body;
+
+  database('songs').where({'artist': artist, 'title': title}).select()
   .then(song => {
-    console.log(song)
     if (!song.length) {
-      return res.status(404).send('Song does not exist in database.')
+      return res.status(404).send({
+        error: 'Song does not exist in database.'
+      });
     } else {
       database('songs').where('id', song[0].id).del()
       .then(() => {
-        return res.status(204).send({
-          success: `Song entitled ${title} has been deleted from database`,
+        return res.status(200).send({
+          success: `Song entitled ${title} has been deleted from database.`
         });
       })
       .catch(error => res.status(500).send(error));
