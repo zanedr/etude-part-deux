@@ -59,7 +59,7 @@ export class Settings extends Component {
         })
         .then(() => {
             console.log('patch good')
-            this.props.updateTab(JSON.stringify(processedTab))
+            this.props.updateTab(JSON.stringify(processedTab), this.state)
             this.props.closeSettings();
         })
         .catch(() => {
