@@ -88,7 +88,7 @@ app.patch('/api/v1/songs', (req, res) => {
         'timestamps': timestamps
       })
       .then((updatedSong) => {
-        return res.status(201).send({
+        return res.status(200).send({
           success: `Song entitled ${title} updated to reflect changes.`
         });
       })

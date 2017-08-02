@@ -22,7 +22,7 @@ export default class App extends Component {
     .then(songs => {
       let songList = JSON.parse(songs)
       return this.setState({songs: songList})
-    })
+    }).catch((err) => console.log(err))
   }
 
   displaySelected() {
@@ -53,7 +53,7 @@ export default class App extends Component {
     .then(songs => {
       let songList = JSON.parse(songs)
       return this.setState({songs: songList})
-    })
+    }).catch((err) => console.log(err))
   }
 
   render() {
