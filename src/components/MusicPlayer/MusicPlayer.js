@@ -19,6 +19,10 @@ export default class MusicPlayer extends Component {
   }
 
   isPlaying(e) {
+    if(!this.state.url.length) {
+      alert('Please add a URL for audio in song settings')
+      return;
+    }
     const { timestamp } = this.state;
 
     if (timestamp) {
@@ -119,15 +123,8 @@ export default class MusicPlayer extends Component {
               onChange={(e) => this.setState({playbackRate: e.target.value})}
             />
           </container>
-          <container className='speed'>
-            <button className='speed-up'
-              onClick={() => this.setPlayback('+')}>+Speed</button>
-            <button className='speed-down'
-              onClick={() => this.setPlayback('-')}>-Speed</button>
-          </container>
           <container className='play-reset'>
             <button className='play-button' onClick={(e) => this.isPlaying(e)}>{playing? 'Pause': 'Play'}</button>
-            <button className='reset-url' onClick={() => this.resetState()}>Reset</button>
           </container>
         </section>
       </section>

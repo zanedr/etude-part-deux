@@ -2,30 +2,30 @@
 
 .music-player {
     background: $black;
-    height: 50%;
-    width: 100%;
-    position: absolute;
+    height: 100px;
+    width: 90%;
+    position: fixed;
     z-index: 3;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
 }
 
 .player-controls {
   display: flex;
-  flex-direction: column;
+  height: 80px;
   width: 80%;
   margin: 5% auto;
 }
 
 .music-player container {
   display: flex;
-  // justify-content: space-between;
+  margin-bottom: 40px;
   width: 100%;
 }
 
 .play-reset {
-  flex-direction: column;
+  // flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -58,7 +58,6 @@
 }
 
 .play-reset button {
-  margin-top: 5%;
   background: $white;
   width: 50%;
   height: 30px;
