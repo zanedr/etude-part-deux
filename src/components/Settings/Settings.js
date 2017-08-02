@@ -25,7 +25,6 @@ export class Settings extends Component {
             audio: this.props.audio,
             priority: this.props.priority
         })
-        console.log('WILL MOUNT', this.state)
     };
 
     saveSettings() {
@@ -52,7 +51,8 @@ export class Settings extends Component {
         })
         .then(() => {
             console.log('patch good')
-            this.setState({tab: processedTab});
+            this.props.updateTab(JSON.stringify(processedTab))
+            this.props.closeSettings();
         })
         .catch(() => {
             console.log(error)
