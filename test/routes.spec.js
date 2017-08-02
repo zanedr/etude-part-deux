@@ -124,7 +124,11 @@ describe('API Routes', () => {
     });
   });
 
-
-
-
+  describe('DELETE /api/v1/songs', () => {
+    it('should delete a song successfully', (done) => {
+      chai.request(server)
+      .delete('/api/v1/songs')
+      .send()
+    })
+  })
 });
