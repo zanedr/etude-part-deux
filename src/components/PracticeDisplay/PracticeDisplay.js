@@ -63,7 +63,7 @@ export default class PracticeDisplay extends Component{
 
     renderTab() {
         if(this.props.selectedSong.tab.length) {
-            let parsedTab = JSON.parse(this.props.selectedSong.tab)
+            let parsedTab = JSON.parse(this.state.tab)
             return parsedTab.map((line, index) => {
 
                 if(line === ' ') {
