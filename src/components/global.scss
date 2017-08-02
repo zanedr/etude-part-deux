@@ -35,3 +35,16 @@ h1 {
 button {
   cursor: pointer;
 }
+
+.add-song-button {
+  // margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  background: $lightGreen;
+  // width: 50%;
+  height: 30px;
+  border: none;
+  color: $black;
+  padding-top: 5px;
+  padding-bottom: 22px;
+}
