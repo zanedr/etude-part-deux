@@ -6,7 +6,7 @@ import { mockSongs } from '../../../mock-data/songs.js'
 import { AddSong } from '../AddSong/AddSong'
 
 
-export default class extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -17,7 +17,7 @@ export default class extends Component {
   }
 
   componentWillMount() {
-    fetch('api/v1/songs')
+    fetch('/api/v1/songs')
     .then(res => res.text())
     .then(songs => {
       let songList = JSON.parse(songs)
