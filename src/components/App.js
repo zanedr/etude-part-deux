@@ -28,6 +28,10 @@ export default class extends Component {
   displaySelected() {
     if(this.state.selectedSong.title) {
       return <PracticeDisplay selectedSong={this.state.selectedSong} unselect={this.unselectSong.bind(this)} />
+    } else {
+      return (
+      <SongDisplay select={this.selectSong.bind(this)} songs={this.state.songs}/>
+      )
     }
   }
 
@@ -59,13 +63,12 @@ export default class extends Component {
   render() {
     return (
       <div className="App">
-        {this.displaySelected()}
         <div className="main-title">
           <h1>Etude</h1>
           <button className="add-song-button" onClick={() => this.setState({addSong: true})}>Add Song</button>
         </div>
+        {this.displaySelected()}
         {this.addSong()}
-        <SongDisplay select={this.selectSong.bind(this)} songs={this.state.songs}/>
       </div>
     );
   }

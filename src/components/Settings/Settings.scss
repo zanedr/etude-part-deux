@@ -63,3 +63,28 @@
   height: 30px;
   width: 75%;
 }
+
+@media screen and (max-width: 900px) {
+  .settings-container {
+    height: 100%;
+    width: 100%
+  }
+
+  #delete-song-button {
+    width: 100%;
+  }
+
+  .settings-container input {
+    width: 60%;
+    margin-right: 5px;
+  }
+
+  .setting-tab {
+    margin-right: 5px;
+    width: 60%;
+  }
+
+  .settings-input-label {
+    margin-left: 10px
+  }
+}

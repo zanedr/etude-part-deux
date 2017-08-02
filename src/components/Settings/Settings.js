@@ -78,6 +78,7 @@ export class Settings extends Component {
           console.log(error)
       })
     }
+    
     render() {
         return(
             <div className="settings-container">
