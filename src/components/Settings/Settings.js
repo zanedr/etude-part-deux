@@ -29,13 +29,20 @@ export class Settings extends Component {
     };
 
     saveSettings() {
-        let processDoubleLineBreaksTab = this.state.tab.split('\n\n')
         let processedTab = []
-        processDoubleLineBreaksTab.forEach((line) => {
-            line.split('\n').forEach((interiorLine) => {
-                processedTab.push(interiorLine)
+        let processDoubleLineBreaksTab
+        let completelyProcessedTab = ''
+        if(this.state.tab !== this.props.tab) {
+            processDoubleLineBreaksTab = this.state.tab.split('\n\n')
+            processDoubleLineBreaksTab.forEach((line) => {
+                line.split('\n').forEach((interiorLine) => {
+                    processedTab.push(interiorLine)
+                })
             })
-        })
+            completelyProcessedTab = JSON.stringify(processedTab)
+        } else {
+            completelyProcessedTab = this.state.tab
+        }
 
         fetch('/api/v1/songs', {
             method: 'PATCH',
@@ -45,7 +52,7 @@ export class Settings extends Component {
                 'title': this.state.title,
                 'artist': this.state.artist,
                 'timestamps': this.state.timestamps,
-                'tab': JSON.stringify(processedTab),
+                'tab': completelyProcessedTab,
                 'audio': this.state.audio,
                 'priority': this.state.priority
             })
