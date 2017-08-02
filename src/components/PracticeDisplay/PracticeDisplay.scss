@@ -40,7 +40,7 @@
 }
 
 .controls button {
-  margin: 0;
+  margin: 2% 0 0;
   background: $lightGreen;
   width: 50%;
   height: 30px;
@@ -48,7 +48,8 @@
   color: $black;
   padding-top: 5px;
   padding-bottom: 22px;
+  transition-duration: 0.2s;
   &:hover{
-      background-color: $lightGray;
+      background-color: $white;
   }
 }

@@ -4,17 +4,17 @@ export const SongCard =  ({ song, select }) => {
 
   const checkForTab = () => {
     if(song.tab.length > 5) {
-      return ( <span>&#10004;</span> )
+      return ( <span className="affirmitive">&#10004;</span> )
     } else {
-      return ( <span>&#x2717;</span>)
+      return ( <span className="negative">&#x2717;</span>)
     }
   }
 
   const checkForAudio = () => {
-    if(song.tab.length > 0) {
-      return ( <span>&#10004;</span> )
+    if(song.audio.length > 0) {
+      return ( <span className="affirmitive">&#10004;</span> )
     } else {
-      return ( <span>&#x2717;</span>)
+      return ( <span className="negative">&#x2717;</span>)
     }
   }
 
