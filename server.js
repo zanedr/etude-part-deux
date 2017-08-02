@@ -98,11 +98,10 @@ app.patch('/api/v1/songs', (req, res) => {
 });
 
 //**************DELETE REQUESTS***********************//
-app.delete('/api/v1/songs/delete', (req, res) => {
-  const { id, title } = req.body;
-  database('songs').where('id', id).select()
+app.delete('/api/v1/songs', (req, res) => {
+  const { title } = req.body;
+  database('songs').where('title', title).select()
   .then(song => {
-    console.log(song)
     if (!song.length) {
       return res.status(404).send('Song does not exist in database.')
     } else {

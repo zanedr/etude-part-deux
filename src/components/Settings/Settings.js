@@ -60,11 +60,10 @@ export class Settings extends Component {
 
     deleteSong() {
       console.log('delete song clicked')
-      fetch('/api/v1/songs/delete', {
+      fetch('/api/v1/songs', {
           method: 'DELETE',
           headers: { 'Content-Type' : 'application/json' },
           body: JSON.stringify({
-              'id': this.state.id,
               'title': this.state.title
           })
       })
