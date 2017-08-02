@@ -2,16 +2,20 @@ import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
 
 export default class MusicPlayer extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      url: '',
+      url: this.props.audioUrl,
       playing: false,
       controls: false,
       volume: 1,
       playbackRate: 1,
-      timestamp: ''
+      timestamp: '0:0'
     }
+  }
+
+  componentWillMount() {
+    this.setState({url: this.props.audioUrl})
   }
 
   isPlaying(e) {
@@ -99,24 +103,21 @@ export default class MusicPlayer extends Component {
                    />
         <section className="player-controls">
           <container className='seek'>
-            <input className='seek-to'
+            <p>Starting point</p>
+            <input className='seek-to player-input'
               type='text'
               placeholder='Seek To'
-              value={timestamp}
+              value={this.state.timestamp}
               onChange={(e) => { this.setTimestamp(e) }}
             />
-            <button className='submit-timestamp'
-              onClick={() => this.submitTimestamp()}>Play</button>
           </container>
-          <container className='url'>
-            <input className='url-input'
-              type='text'
-              placeholder='Paste Song Url'
-              value={url}
-              onChange={(e) => this.setUrl(e)}
+          <container className='playbackRate-container'>
+            <p>Speed</p>
+            <input className='playbackRate-input player-input'
+              type='number'
+              value={this.state.playbackRate}
+              onChange={(e) => this.setState({playbackRate: e.target.value})}
             />
-            <button className='submit-url'
-              onClick={() => this.submitUrl()}>Go</button>
           </container>
           <container className='speed'>
             <button className='speed-up'

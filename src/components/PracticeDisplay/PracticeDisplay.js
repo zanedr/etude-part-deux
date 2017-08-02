@@ -60,7 +60,7 @@ export default class PracticeDisplay extends Component{
             <div className="practice-container">
               {this.settings()}
 
-              <MusicPlayer audio={this.state.audio}/>
+              <MusicPlayer audioUrl={this.props.selectedSong.audio}/>
               <container className='controls'>
                 <button className="settings-button" onClick={this.openSettings.bind(this)}>Edit Song</button>
                 <button onClick={()=> this.props.unselect()} >Return to Song List</button>
