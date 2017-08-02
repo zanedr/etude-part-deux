@@ -63,7 +63,6 @@ export default class PracticeDisplay extends Component{
         } else {
             return (<div className='tab-line'>No tab exists yet</div> )
         }
-
     }
 
     render() {
@@ -84,5 +83,3 @@ export default class PracticeDisplay extends Component{
         )
     }
 }
-
-            //   <textarea className="tab-display" value={this.props.selectedSong.tab}></textarea>
