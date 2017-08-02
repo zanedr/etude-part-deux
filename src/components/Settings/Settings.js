@@ -51,7 +51,8 @@ export class Settings extends Component {
         })
         .then(() => {
             console.log('patch good')
-            this.setState({tab: processedTab})
+            this.props.updateTab(JSON.stringify(processedTab))
+            this.props.closeSettings();
         })
         .catch(() => {
             console.log(error)
@@ -69,6 +70,8 @@ export class Settings extends Component {
           })
       })
       .then(() => {
+          this.props.closeSettings();
+          this.props.closeOut();
           console.log('delete successful')
       })
       .catch(() => {

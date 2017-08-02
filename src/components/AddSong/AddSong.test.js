@@ -81,17 +81,13 @@ describe('AddSong', () => {
     expect(wrapper.state().priority).toBe(1);
   });
 
-  it('should add a song on click', () => {
-    const wrapper = shallow(<AddSong />);
+  it('should close the component on click', () => {
     const mockFn = jest.fn();
-    const button = wrapper.find('.save-addSong');
-    fetch = jest.fn(() => new Promise(resolve => resolve()));
+    const wrapper = shallow(<AddSong closeAddSong={mockFn}/>);
+    const button = wrapper.find('.close-addSong');
 
-    button.simulate('click', {
-      saveAddSong: mockFn,
-    });
+    button.simulate('click');
 
     expect(mockFn).toHaveBeenCalledTimes(1);
-
-  })
+  });
 });

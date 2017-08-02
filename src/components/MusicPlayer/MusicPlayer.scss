@@ -8,6 +8,7 @@
     z-index: 3;
     margin: 0 auto;
     display: flex;
+    border-bottom: 3px solid $lightGreen;
     // flex-direction: column;
 }
 
@@ -67,11 +68,14 @@
 
 .play-reset button {
   background: $white;
+  border-radius: 10px;
+  font-size: 40px;
+  font-weight: 200;
   width: 50%;
-  height: 30px;
+  height: 50px;
   border: none;
   color: $black;
-  padding-top: 7px;
+  margin-top: 5px;
   padding-bottom: 24px;
 }
 
