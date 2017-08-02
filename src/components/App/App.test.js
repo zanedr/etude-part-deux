@@ -37,5 +37,37 @@ describe('App', () => {
     expect(wrapper.state().addSong).toBe(true);
   });
 
+  it('should render the AddSong component on click', () => {
+    fetchMock.get('/api/v1/songs', {status: 200});
 
+    const wrapper = mount(<App />);
+    const button = wrapper.find('.add-song-button');
+
+    expect(wrapper.state().addSong).toBe(false);
+
+    button.simulate('click');
+
+    expect(wrapper.state().addSong).toBe(true);
+    expect(wrapper.find('.addSong-container').length).toBe(1);
+  });
+
+  it('should close the AddSong component on click', () => {
+    fetchMock.get('/api/v1/songs', {status: 200});
+
+    const wrapper = mount(<App />);
+    const button = wrapper.find('.add-song-button');
+
+    expect(wrapper.state().addSong).toBe(false);
+
+    button.simulate('click');
+
+    expect(wrapper.state().addSong).toBe(true);
+    expect(wrapper.find('.addSong-container').length).toBe(1);
+
+    const closeBtn = wrapper.find('.close-addSong');
+
+    closeBtn.simulate('click');
+
+    expect(wrapper.state().addSong).toBe(false);
+  });
 });
