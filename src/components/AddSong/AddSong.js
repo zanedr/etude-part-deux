@@ -11,7 +11,6 @@ export class AddSong extends Component {
             tab: '',
             audio: '',
             priority: 0
-
         }
     }
 
