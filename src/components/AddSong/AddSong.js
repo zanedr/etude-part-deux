@@ -52,7 +52,7 @@ export class AddSong extends Component {
     render() {
         return(
             <div className="addSong-container">
-                <h2>Add a new song</h2>
+                <h2 className="addSong-main-title">Add a new song</h2>
                 <container id='first-container' className="addSong-input">
                     <p className="addSong-input-label">Title:</p>
                     <input className="addSong-input addSong-title" placeholder="Song Title" type="text" placeholder='Enter Song Title' onChange={(e) => {this.setState({title: e.target.value})}} />
