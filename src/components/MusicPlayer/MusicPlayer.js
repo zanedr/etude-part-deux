@@ -117,7 +117,8 @@ export default class MusicPlayer extends Component {
           </container>
           <container className='playbackRate-container'>
             <p>Speed</p>
-            <input className='playbackRate-input player-input'
+            <input max="3" min="0.25" step=".05"
+              className='playbackRate-input player-input'
               type='number'
               value={this.state.playbackRate}
               onChange={(e) => this.setState({playbackRate: e.target.value})}

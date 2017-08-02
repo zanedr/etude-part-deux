@@ -69,6 +69,12 @@ button:focus {outline: none}
       width: 150px;
     }
 
+}
+
+@media screen and (max-width: 650px) {
+  html, body {
+      background: $black;
+    }
 
 }
 
@@ -93,9 +99,5 @@ button:focus {outline: none}
 
     .App {
       width: 100%;
-    }
-
-    html, body {
-      background-color: $black;
     }
 }
