@@ -19,8 +19,8 @@ export const SongCard =  ({ song, select }) => {
   }
 
   return (
-    <section className='song'>
-      <div onClick={()=> {select(song)}} className='title-artist'>
+    <section onClick={()=> {select(song)}} className='song'>
+      <div className='title-artist'>
         <h2>Title:  {song.title}</h2>
         <p>Artist: {song.artist}</p>
       </div>

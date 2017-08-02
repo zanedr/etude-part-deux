@@ -3,9 +3,14 @@
 .song {
   border-bottom: 1px groove $white;
   width: 90%;
+  padding: 0 5%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  transition-duration: 0.2s;
+  &:hover{
+    background-color: $lightGray;
+  }
 }
 
 .tab-audio {
