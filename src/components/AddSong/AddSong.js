@@ -23,15 +23,15 @@ export class AddSong extends Component {
                 processedTab.push(interiorLine)
             })
         })
-        console.log('patch client side', processedTab)
-        console.log('patch client side double', processDoubleLineBreaksTab)
+        let artist = this.state.artist || 'Unknown Artist'
+        console.log('patch client side', artist)
         fetch('/api/v1/songs', {
             method: 'POST',
             headers: { 'Content-Type' : 'application/json' },
             body: JSON.stringify({
                 'id': this.state.id,
                 'title': this.state.title,
-                'artist': this.state.artist,
+                'artist': artist,
                 'timestamps': this.state.timestamps,
                 'tab': JSON.stringify(processedTab),
                 'audio': this.state.audio,
