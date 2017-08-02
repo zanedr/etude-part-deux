@@ -52,6 +52,7 @@ export class Settings extends Component {
         })
         .then(() => {
             console.log('patch good')
+            this.setState({tab: processedTab})
         })
         .catch(() => {
             console.log(error)
@@ -60,11 +61,11 @@ export class Settings extends Component {
 
     deleteSong() {
       console.log('delete song clicked')
-      fetch('/api/v1/songs/delete', {
+      fetch('/api/v1/songs', {
           method: 'DELETE',
           headers: { 'Content-Type' : 'application/json' },
           body: JSON.stringify({
-              'id': this.state.id,
+              'artist': this.state.artist,
               'title': this.state.title
           })
       })
