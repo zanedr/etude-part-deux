@@ -52,13 +52,13 @@ app.post('/api/v1/songs', (req, res) => {
     });
   }
 
-  database('songs').insert({ title, artist, timestamps, audio, tab, priority}, 'id')
-  .then((newArtist) => {
+  database('songs').insert({title, artist, audio, tab, priority, timestamps}, 'id')
+  .then((newSong) => {
     return res.status(201).send({
       success: `Song ${title} added to database.`,
     })
-    .catch(error => res.status(500).send(error));
-  });
+  })
+  .catch(error => res.status(500).send(error));
 });
 
 //**************PATCH REQUESTS***********************//
@@ -87,7 +87,7 @@ app.patch('/api/v1/songs', (req, res) => {
         'priority': priority,
         'timestamps': timestamps
       })
-      .then(() => {
+      .then((updatedSong) => {
         return res.status(201).send({
           success: `Song entitled ${title} updated to reflect changes.`
         })
@@ -114,7 +114,7 @@ app.delete('/api/v1/songs', (req, res) => {
       })
       .catch(error => res.status(500).send(error));
     }
-  });    
+  });
 });
 
 app.listen(port, function(error) {
