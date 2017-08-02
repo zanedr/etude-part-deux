@@ -114,7 +114,7 @@
 
     .play-reset button {
       position: absolute;
-      top: 75px;
+      top: 60px;
       left: 160px;
       margin: 0 auto;
       width: 150px;
@@ -129,6 +129,14 @@
 
     .play-reset {
       margin: 0;
+    }
+
+    .music-player input {
+      margin-top: 10px;
+    }
+
+    .music-player p {
+      margin-top: 20px;
     }
 
 }
