@@ -15,15 +15,17 @@ export class Settings extends Component {
     }
 
     componentWillMount() {
+      const { id, title, artist, timestamps, tab, audio, priority } = this.props;
+
       this.setState({
-          id: this.props.id,
-          title: this.props.title,
-          artist: this.props.artist,
-          timestamps: this.props.timestamps,
-          tab: this.props.tab,
-          audio: this.props.audio,
-          priority: this.props.priority
-      })
+          id: id || this.state.id,
+          title: title || this.state.title,
+          artist: artist || this.state.artist,
+          timestamps: timestamps || this.state.timestamps,
+          tab: tab || this.state.tab,
+          audio: audio || this.state.audio,
+          priority: priority || this.state.priority
+      });
     };
 
     saveSettings() {
@@ -76,7 +78,7 @@ export class Settings extends Component {
           console.log(error)
       })
     }
-    
+
     render() {
         return(
             <div className="settings-container">

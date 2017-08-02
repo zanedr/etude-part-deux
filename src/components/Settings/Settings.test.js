@@ -15,7 +15,7 @@ describe('Settings', () => {
     expect(wrapper.find('.settings-input').length).toBe(12);
   });
 
-  it('should have state with initial values', () => {
+  it('should have state with initial values if props are not passed in', () => {
     const initialState = {
       id: 0,
       title: '',
@@ -27,10 +27,11 @@ describe('Settings', () => {
     };
 
     const wrapper = shallow(<Settings />);
-    expect(wrapper.state()).toEqual(initialState)
+
+    expect(wrapper.state()).toEqual(initialState);
   });
 
-  it('should have state with defined values after getting mounted', () => {
+  it('should have state with defined values after receiving props', () => {
     const settingsProps = {
       id: 2,
       title: 'hi',
@@ -41,7 +42,8 @@ describe('Settings', () => {
       priority: 0
     };
 
-    const wrapper = mount(<Settings settingProps={settingsProps} />);
-    expect(wrapper.state()).toEqual(settingsProps)
+    const wrapper = shallow(<Settings {...settingsProps} />);
+
+    expect(wrapper.state()).toEqual(settingsProps);
   });
 });
