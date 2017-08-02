@@ -15,8 +15,7 @@ describe('Settings', () => {
     expect(wrapper.find('.settings-input').length).toBe(12);
   });
 
-  it('should have state with initial values', () => {
-    const mockFn = jest.fn();
+  it('should have state with initial values if props are not passed in', () => {
     const initialState = {
       id: 0,
       title: '',
@@ -27,21 +26,12 @@ describe('Settings', () => {
       priority: 0
     };
 
-    const wrapper = shallow(<Settings updateTab={mockFn}
-                                      closeOut={mockFn}
-                                      id={0}
-                                      title={''}
-                                      artist={''}
-                                      timestamps={''}
-                                      tab={''}
-                                      audio={''}
-                                      priority={0}
-                                      closeSettings={mockFn} />);
+    const wrapper = shallow(<Settings />);
 
     expect(wrapper.state()).toEqual(initialState)
   });
 
-  it('should have state with defined values after getting mounted', () => {
+  it('should have state with defined values after receiving props', () => {
     const mockFn = jest.fn();
     const settingsProps = {
       id: 2,
@@ -53,16 +43,7 @@ describe('Settings', () => {
       priority: 0
     };
 
-    const wrapper = mount(<Settings updateTab={mockFn}
-                                    closeOut={mockFn}
-                                    id={2}
-                                    title={'hi'}
-                                    artist={'there'}
-                                    timestamps={''}
-                                    tab={''}
-                                    audio={''}
-                                    priority={0}
-                                    closeSettings={mockFn} />);
+    const wrapper = mount(<Settings {...settingsProps} />);
 
     expect(wrapper.state()).toEqual(settingsProps)
   });
