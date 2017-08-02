@@ -7,12 +7,20 @@ export default class PracticeDisplay extends Component{
         super(props)
         this.state = {
           settings: false,
-          tab: ''
+          title: '',
+          artist:'',
+          tab: '',
         }
     }
 
     componentWillMount() {
-        this.setState({tab: this.props.selectedSong.tab})
+      const { title, artist, tab } = this.props.selectedSong;
+
+        this.setState({
+          title: title,
+          artist: artist,
+          tab: tab
+        })
     }
 
     openSettings() {
@@ -27,8 +35,12 @@ export default class PracticeDisplay extends Component{
         }
     }
 
-    updateTab(tab) {
-        this.setState({tab: tab})
+    updateTab(tab, state) {
+        this.setState({
+          title: state.title,
+          artist: state.artist,
+          tab: tab
+        });
     }
 
     settings() {
@@ -76,7 +88,7 @@ export default class PracticeDisplay extends Component{
                 <button className="settings-button" onClick={this.openSettings.bind(this)}>Edit Song</button>
                 <button onClick={()=> this.props.unselect()} >Return to Song List</button>
               </container>
-              <h3 className="song-info">Now viewing: <span className="title-and-artist">{`${this.props.selectedSong.title} - ${this.props.selectedSong.artist}`}</span></h3>
+              <h3 className="song-info">Now viewing: <span className="title-and-artist">{`${this.state.title} - ${this.state.artist}`}</span></h3>
               <container className="tab-container">
                 {this.renderTab()}
              </container>
