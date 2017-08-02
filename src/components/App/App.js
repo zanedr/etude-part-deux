@@ -1,9 +1,9 @@
 require('../global.scss');
 import React, { Component } from 'react';
-import { SongDisplay } from '../SongDisplay/SongDisplay'
-import PracticeDisplay from '../PracticeDisplay/PracticeDisplay'
-import { mockSongs } from '../../../mock-data/songs.js'
-import { AddSong } from '../AddSong/AddSong'
+import { SongDisplay } from '../SongDisplay/SongDisplay';
+import PracticeDisplay from '../PracticeDisplay/PracticeDisplay';
+import { mockSongs } from '../../../mock-data/songs.js';
+import { AddSong } from '../AddSong/AddSong';
 
 
 export default class App extends Component {
