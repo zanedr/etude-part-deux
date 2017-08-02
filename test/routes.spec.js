@@ -25,7 +25,7 @@ describe('API Routes', () => {
   });
 
   describe('GET /api/v1/songs', () => {
-    it('should return all songs in db', (done) => {
+    it('should return all songs in database', (done) => {
       chai.request(server)
       .get('/api/v1/songs')
       .end((err, response) => {
@@ -57,4 +57,21 @@ describe('API Routes', () => {
       });
     });
   });
+
+  describe('POST /api/v1/songs', () => {
+    it('should add a new song to the database', (done) => {
+      chai.request(server)
+      .post('/api/v1/songs')
+      .send({
+        title: 'A Whole New World'
+      })
+      .end((err, response) => {
+        response.should.have.status(201);
+        response.body.should.be.a('object');
+        response.body.should.have.property('success');
+        response.body.success.should.equal('Song A Whole New World added to database.');
+        done();
+      })
+    })
+  })
 });

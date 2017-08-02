@@ -57,8 +57,8 @@ app.post('/api/v1/songs', (req, res) => {
     return res.status(201).send({
       success: `Song ${title} added to database.`,
     })
-    .catch(error => res.status(500).send(error));
-  });
+  })
+  .catch(error => res.status(500).send(error));
 });
 
 //**************PATCH REQUESTS***********************//
@@ -114,7 +114,7 @@ app.delete('/api/v1/songs', (req, res) => {
       })
       .catch(error => res.status(500).send(error));
     }
-  });    
+  });
 });
 
 app.listen(port, function(error) {
